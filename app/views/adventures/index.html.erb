@@ -3,8 +3,8 @@
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Country</th>
+      <th class="itemHeader">Name</th>
+      <th class="itemHeader">Country</th>
       <th>Description</th>
       <th>Picture</th>
       <th>Budget</th>
@@ -26,6 +26,7 @@
         <td><%= adventure.description %></td>
         <td><%= image_tag adventure.picture_url(:thumb) if adventure.picture? %></td>
         <td><%= adventure.budget %></td>
+
         <td><%= adventure.link %></td>
         <td><%= adventure.more_info %></td>
         <td><%= adventure.completed %></td>
