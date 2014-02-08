@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  country: MyString
+  description: MyText
+  picture: 
+  budget: 1
+  link: MyString
+  more_info: MyString
+  completed: false
+  submitted_by: MyString
+
+two:
+  name: MyString
+  country: MyString
+  description: MyText
+  picture: 
+  budget: 1
+  link: MyString
+  more_info: MyString
+  completed: false
+  submitted_by: MyString

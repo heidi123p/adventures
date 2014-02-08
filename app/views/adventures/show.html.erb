@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @adventure.name %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @adventure.country %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @adventure.description %>
+</p>
+
+<p>
+  <strong>Picture:</strong>
+  <%= image_tag(@adventure.picture_url, :width => 600) if @adventure.picture.present? %>
+</p>
+
+<p>
+  <strong>Budget:</strong>
+  <%= @adventure.budget %>
+</p>
+
+<p>
+  <strong>Link:</strong>
+  <%= @adventure.link %>
+</p>
+
+<p>
+  <strong>More info:</strong>
+  <%= @adventure.more_info %>
+</p>
+
+<p>
+  <strong>Completed:</strong>
+  <%= @adventure.completed %>
+</p>
+
+<p>
+  <strong>Submitted by:</strong>
+  <%= @adventure.submitted_by %>
+</p>
+
+<%= link_to 'Edit', edit_adventure_path(@adventure) %> |
+<%= link_to 'Back', adventures_path %>

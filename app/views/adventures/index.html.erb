@@ -1,0 +1,43 @@
+<h1>Listing adventures</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Country</th>
+      <th>Description</th>
+      <th>Picture</th>
+      <th>Budget</th>
+      <th>Link</th>
+      <th>More info</th>
+      <th>Completed</th>
+      <th>Submitted by</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @adventures.each do |adventure| %>
+      <tr>
+        <td><%= adventure.name %></td>
+        <td><%= adventure.country %></td>
+        <td><%= adventure.description %></td>
+        <td><%= image_tag adventure.picture_url(:thumb) if adventure.picture? %></td>
+        <td><%= adventure.budget %></td>
+        <td><%= adventure.link %></td>
+        <td><%= adventure.more_info %></td>
+        <td><%= adventure.completed %></td>
+        <td><%= adventure.submitted_by %></td>
+        <td><%= link_to 'Show', adventure %></td>
+        <td><%= link_to 'Edit', edit_adventure_path(adventure) %></td>
+        <td><%= link_to 'Destroy', adventure, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Adventure', new_adventure_path %>

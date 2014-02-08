@@ -1,0 +1,56 @@
+<%= form_for(@adventure) do |f| %>
+  <% if @adventure.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@adventure.errors.count, "error") %> prohibited this adventure from being saved:</h2>
+
+      <ul>
+      <% @adventure.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :country %><br>
+    <%= f.text_field :country %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :picture %><br>
+    <%= f.file_field :picture %>
+  </div>
+  <div class="field">
+    <%= f.label :budget, "Expected Budget" %><br>
+    <%= f.number_field :budget %>
+  </div>
+  <div class="field">
+    <%= f.label :time, "How Long Will This Take in Days?" %><br>
+    <%= f.number_field :time %>
+  <div class="field">
+    <%= f.label :link %><br>
+    <%= f.text_field :link %>
+  </div>
+  <div class="field">
+    <%= f.label :more_info %><br>
+    <%= f.text_field :more_info %>
+  </div>
+  <div class="field">
+    <%= f.label :completed %><br>
+    <%= f.check_box :completed %>
+  </div>
+  <div class="field">
+    <%= f.label :submitted_by %><br>
+    <%= f.text_field :submitted_by %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
