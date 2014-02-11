@@ -19,10 +19,9 @@ test:
   timeout: 5000
 
 production:
-  adapter: mysql
+  adapter: postgresql
   database: adventure_mixnmatch
   pool: 5
   timeout: 5000
   username: rails_adventure
   password: carpemanana
-  hostname: mysql-1.thesquirrelfish.com
