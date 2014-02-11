@@ -20,8 +20,10 @@ test:
 
 production:
   adapter: postgresql
-  database: adventure_mixnmatch
+  database: adventures
   pool: 5
   timeout: 5000
-  username: rails_adventure
-  password: carpemanana
+  username: app
+  password: ftXxiYXqOPm8TBUXTfzV
+  host: 210.193.164.156
+  port: 5432
