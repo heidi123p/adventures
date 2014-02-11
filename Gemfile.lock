@@ -60,7 +60,11 @@ GEM
       subexec (~> 0.2.1)
     minitest (4.7.5)
     multi_json (1.8.4)
+<<<<<<< HEAD
     pg (0.17.1-x86-mingw32)
+=======
+    pg (0.16.0-x86-mingw32)
+>>>>>>> dcac94c7aab6f8e1cd797cedf62225ffcf7f0aa4
     polyglot (0.3.3)
     rack (1.5.2)
     rack-test (0.6.2)
