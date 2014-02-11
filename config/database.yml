@@ -25,3 +25,5 @@ production:
   timeout: 5000
   username: app
   password: ftXxiYXqOPm8TBUXTfzV
+  host: 210.193.164.156
+  port: 5432
