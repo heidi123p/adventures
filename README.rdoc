@@ -11,17 +11,22 @@ Things you may want to cover:
 
 * Configuration
 
-* Database creation
-
-* Database initialization
+* Databases:
+pg on Ninefold, you need to remove all the Windows stuff from the Gemfile.lock
 
 * How to run the test suite
 
 * Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+* Deployment: Ninefold heidi123p account
 
-* ...
+* Location Stuffs:
+Ruby Gem for Country Info: https://github.com/hexorx/countries
+Ruby Gem for Location Data
+http://rubydoc.info/gems/geocoder/frames
+OR
+https://github.com/geokit/geokit
+
 
 
 Please feel free to use a different markup language if you do not plan to run
