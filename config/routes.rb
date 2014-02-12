@@ -1,4 +1,5 @@
 Adventures::Application.routes.draw do
+  get "pages/info"
   resources :adventures
   root :to =>redirect('/adventures')
   # The priority is based upon order of creation: first created -> highest priority.
