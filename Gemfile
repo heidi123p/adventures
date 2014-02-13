@@ -63,3 +63,7 @@ gem 'mini_magick','3.5.0'
 #for selecting countries per adventure
 gem 'countries'
 gem 'country_select'
+
+#for adding address
+gem 'geokit'
+gem 'geokit-rails'
