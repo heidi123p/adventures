@@ -7,10 +7,10 @@
       <th class="itemHeader">Country</th>
       <th>Description</th>
       <th>Picture</th>
-      <th>Budget</th>
+ <!--     <th>Budget</th>  -->
       <th>Link</th>
-      <th>More info</th>
-      <th>Completed</th>
+ <!--     <th>More info</th>
+      <th>Completed</th> -->
       <th>Submitted by</th>
       <th></th>
       <th></th>
@@ -25,10 +25,10 @@
         <td><%= adventure.country %></td>
         <td><%= adventure.description %></td>
         <td><%= image_tag adventure.picture_url(:thumb) if adventure.picture? %></td>        
-        <td><%= #adventure.budget %></td>
+<!--        <td><%= adventure.budget %></td> -->
         <td><%= adventure.link %></td>
-        <td><%= adventure.more_info %></td>
-        <td><%= adventure.completed %></td>
+<!--    <td><%= adventure.more_info %></td>
+        <td><%= adventure.completed %></td> -->
         <td><%= adventure.submitted_by %></td>
         <td><%= link_to 'View', adventure %></td>
         <td><%= link_to 'Edit', edit_adventure_path(adventure) %></td>
