@@ -21,18 +21,18 @@
   <tbody>
     <% @adventures.each do |adventure| %>
       <tr>
-		<div class="container">
-      		<div class="row row-padded">
-      			<div class="span4">
-      				<div style="background-color: gray;" class="span4">
-        				<td><%= adventure.name %></td>
-        			</div>
-        		</div>
-        	</div>
+      	<div class="row row-buffer row-even">
+			<td><%= adventure.name %></td>
 		</div>
-        <td><%= adventure.country %></td>
-        <td><%= adventure.description %></td>
-        <td><%= image_tag adventure.picture_url(:thumb) if adventure.picture? %></td>        
+		<div class="row row-buffer row-odd">
+    		<td><%= adventure.country %></td>
+    	</div>
+        <div class="row row-buffer row-even">
+       		<td><%= adventure.description %></td>
+        </div>
+        <div class="row row-buffer row-odd">
+        	<td><%= image_tag adventure.picture_url(:thumb) if adventure.picture? %></td> 
+        </div>       
 <!--        <td><%= adventure.budget %></td> -->
         <td><%= adventure.link %></td>
 <!--    <td><%= adventure.more_info %></td>

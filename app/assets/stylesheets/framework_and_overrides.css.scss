@@ -49,13 +49,14 @@ th {
   color:blue;
   padding-right: 50px;
 }
-.row-padded {
-  padding: 35px;
-  background-color: #F7F7F7;
-  border: 1px solid #DDD;
+.row-buffer {
+margin-top:20px;
+margin-bottom:20px;
 }
 
-.row-padded .span4 {
-  background-color: #bbb;
-  width: 30%;
+.row-even {
+background-color:#76A0D3;
+}
+.row-odd {
+background-color:#BDE3FB;
 }
