@@ -5,6 +5,7 @@ class AdventuresController < ApplicationController
   # GET /adventures.json
   def index
     @adventures = Adventure.all
+    @address = Address.all
   end
 
   # GET /adventures/1
@@ -25,7 +26,6 @@ class AdventuresController < ApplicationController
   # POST /adventures.json
   def create
     @adventure = Adventure.new(adventure_params)
-
     respond_to do |format|
       if @adventure.save
         format.html { redirect_to @adventure, notice: 'Adventure was successfully created.' }
@@ -61,6 +61,10 @@ class AdventuresController < ApplicationController
     end
   end
 
+  def address
+    @address = Address.all
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_adventure
@@ -69,6 +73,6 @@ class AdventuresController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def adventure_params
-      params.require(:adventure).permit(:name, :country, :description, :picture, :budget, :link, :more_info, :completed, :submitted_by)
+      params.require(:adventure).permit(:name, :country, :description, :picture, :budget, :link, :more_info, :length, :completed, :submitted_by, :addresses_attributes => [:id , :address_name, :latitude, :longitude, :adventure_id])
     end
 end

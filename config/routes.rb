@@ -1,4 +1,10 @@
 Adventures::Application.routes.draw do
+  resources :addresses do
+    member do
+      get 'addresses'
+    end
+  end
+
   get "pages/info"
   resources :adventures
   root :to =>redirect('/adventures')
