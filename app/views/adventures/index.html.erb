@@ -21,7 +21,13 @@
   <tbody>
     <% @adventures.each do |adventure| %>
       <tr>
-        <td><%= adventure.name %></td>
+      <div class="container">
+      	<div class="row">
+      		<div style="background-color: gray;" class="span4">
+        		<td><%= adventure.name %></td>
+        	</div>
+        </div>
+    </div>
         <td><%= adventure.country %></td>
         <td><%= adventure.description %></td>
         <td><%= image_tag adventure.picture_url(:thumb) if adventure.picture? %></td>        
