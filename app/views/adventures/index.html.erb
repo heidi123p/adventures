@@ -3,10 +3,10 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th class="itemHeader">Name</th>
-      <th class="itemHeader">Country</th>
+	<th></th>
+      <th>Name</th>
+      <th>Country</th>
       <th>Description</th>
-      <th>Picture</th>
  <!--     <th>Budget</th>  -->
       <th>Link</th>
  <!--     <th>More info</th>
@@ -21,10 +21,10 @@
   <tbody>
     <% @adventures.each do |adventure| %>
       <tr>
+      	<td><%= image_tag adventure.picture_url(:thumb) if adventure.picture? %></td>
       	<td><%= adventure.name %></td>
 		<td><%= adventure.country %></td>
-    	<td><%= adventure.description %></td>
-        <td><%= image_tag adventure.picture_url(:thumb) if adventure.picture? %></td>    
+    	<td><%= adventure.description %></td>    
 <!--        <td><%= adventure.budget %></td> -->
         <td><%= adventure.link %></td>
 <!--    <td><%= adventure.more_info %></td>
