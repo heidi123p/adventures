@@ -20,12 +20,12 @@
 
   <tbody>
     <% @adventures.each do |adventure| %>
-      <tr>
+      <tr class="row row-buffer row-even">
       	<div class="row row-buffer row-even">
 			<td><%= adventure.name %></td>
 		</div>
 		<div class="row row-buffer row-odd">
-    		<td><%= adventure.country %></td>
+    		<td class="row row-buffer row-odd"><%= adventure.country %></td>
     	</div>
         <div class="row row-buffer row-even">
        		<td><%= adventure.description %></td>
