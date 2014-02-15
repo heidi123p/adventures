@@ -1,14 +1,14 @@
 <h1>Listing adventures</h1>
 
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th class="itemHeader" class="row row-buffer row-even">Name</th>
+      <th class="itemHeader">Name</th>
       <th class="itemHeader">Country</th>
-      <th class="row row-buffer row-even">Description</th>
+      <th>Description</th>
       <th>Picture</th>
  <!--     <th>Budget</th>  -->
-      <th class="row row-buffer row-even">Link</th>
+      <th>Link</th>
  <!--     <th>More info</th>
       <th>Completed</th> -->
       <th>Submitted by</th>
@@ -21,18 +21,18 @@
   <tbody>
     <% @adventures.each do |adventure| %>
       <tr>
-      	<td class="row row-buffer row-even"><%= adventure.name %></td>
-		<td class="row row-buffer row-odd"><%= adventure.country %></td>
-    	<td class="row row-buffer row-even"><%= adventure.description %></td>
-        <td class="row row-buffer row-odd"><%= image_tag adventure.picture_url(:thumb) if adventure.picture? %></td>    
+      	<td><%= adventure.name %></td>
+		<td><%= adventure.country %></td>
+    	<td><%= adventure.description %></td>
+        <td><%= image_tag adventure.picture_url(:thumb) if adventure.picture? %></td>    
 <!--        <td><%= adventure.budget %></td> -->
-        <td class="row row-buffer row-even"><%= adventure.link %></td>
+        <td"><%= adventure.link %></td>
 <!--    <td><%= adventure.more_info %></td>
         <td><%= adventure.completed %></td> -->
-        <td class="row row-buffer row-odd"><%= adventure.submitted_by %></td>
-        <td class="row row-buffer row-even"><%= link_to 'View', adventure %></td>
-        <td class="row row-buffer row-odd"><%= link_to 'Edit', edit_adventure_path(adventure) %></td>
-        <td class="row row-buffer row-even"><%= link_to 'Delete', adventure, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= adventure.submitted_by %></td>
+        <td><%= link_to 'View', adventure %></td>
+        <td><%= link_to 'Edit', edit_adventure_path(adventure) %></td>
+        <td><%= link_to 'Delete', adventure, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
