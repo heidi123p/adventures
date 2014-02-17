@@ -9,8 +9,7 @@
       <% end %>
       </ul>
     </div>
-  <% end %>
-
+    <% end %>
   <div class="field">
     <%= f.label :name, "Adventure Name" %><br>
     <%= f.text_field :name %>
@@ -50,6 +49,12 @@
   <div class="field">
     <%= f.label :submitted_by %><br>
     <%= f.text_field :submitted_by %>
+  </div>
+  <div class="field">
+    <%= f.fields_for :addresses do |a| %>
+      <%= a.label :address_name, "Full Address" %><br>
+      <%= a.text_field :address_name %>
+    <% end %>
   </div>
   <div class="actions">
     <%= f.submit %>

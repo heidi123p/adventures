@@ -62,7 +62,7 @@ class AdventuresController < ApplicationController
   end
 
   def address
-    @address = Address.all
+    @addresses = Address.all
   end
 
   private
@@ -73,6 +73,6 @@ class AdventuresController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def adventure_params
-      params.require(:adventure).permit(:name, :country, :description, :picture, :budget, :link, :more_info, :length, :completed, :submitted_by, :addresses_attributes => [:id , :address_name, :latitude, :longitude, :adventure_id])
+      params.require(:adventure).permit(:name, :country, :description, :picture, :budget, :link, :more_info, :length, :completed, :submitted_by, :addresses_attributes => [:address_name, :latitude, :longitude, :adventure_id, :_destroy])
     end
 end
