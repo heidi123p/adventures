@@ -54,6 +54,7 @@
     <%= f.fields_for :addresses do |a| %>
       <%= a.label :address_name, "Full Address" %><br>
       <%= a.text_field :address_name %>
+      <%= a.hidden_field :adventure_id %>
     <% end %>
   </div>
   <div class="actions">

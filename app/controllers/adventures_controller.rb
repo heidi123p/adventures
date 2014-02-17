@@ -26,6 +26,7 @@ class AdventuresController < ApplicationController
   # POST /adventures.json
   def create
     @adventure = Adventure.new(adventure_params)
+    @adventure.create_address
     respond_to do |format|
       if @adventure.save
         format.html { redirect_to @adventure, notice: 'Adventure was successfully created.' }
