@@ -14,7 +14,9 @@ class AddressesController < ApplicationController
 
   # GET /addresses/new
   def new
-    @address = Address.new
+    @adventure= Adventure.find(params[:adventure_id])
+    @address = @adventure.addresses.new
+    respond_with(@address)
   end
 
   # GET /addresses/1/edit
@@ -24,7 +26,8 @@ class AddressesController < ApplicationController
   # POST /addresses
   # POST /addresses.json
   def create
-    @address = Address.new(address_params)
+    @adventure = Adventure.find(params[:adventure_id])
+    @address = @adventure.addresses.build(params[:address])
 
     respond_to do |format|
       if @address.save
