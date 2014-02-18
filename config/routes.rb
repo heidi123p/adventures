@@ -1,4 +1,5 @@
 Adventures::Application.routes.draw do
+  get "static_pages/help"
   resources :addresses do
     member do
       get 'addresses'
