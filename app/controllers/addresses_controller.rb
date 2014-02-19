@@ -14,9 +14,7 @@ class AddressesController < ApplicationController
 
   # GET /addresses/new
   def new
-    @adventure= Adventure.find(params[:adventure_id])
-    @address = @adventure.addresses.new
-    respond_with(@address)
+    @address = Address.new
   end
 
   # GET /addresses/1/edit
@@ -26,8 +24,7 @@ class AddressesController < ApplicationController
   # POST /addresses
   # POST /addresses.json
   def create
-    @adventure = Adventure.find(params[:adventure_id])
-    @address = @adventure.addresses.build(params[:address])
+    @address = Address.new(address_params)
 
     respond_to do |format|
       if @address.save
@@ -72,6 +69,6 @@ class AddressesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def address_params
-      params.require(:address).permit(:address_name, :latitude, :longitude, :adventure_id)
+      params.require(:address).permit(:address_name, :latitude, :longitude, :adventure_id, adventure_attributes:[:adventure_id])
     end
 end

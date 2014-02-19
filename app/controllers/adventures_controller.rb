@@ -16,8 +16,12 @@ class AdventuresController < ApplicationController
   # GET /adventures/new
   def new
     @adventure = Adventure.new
+    address = @adventure.create_address
   end
 
+  def address
+    @address = Address.new
+  end
   # GET /adventures/1/edit
   def edit
   end
@@ -26,7 +30,7 @@ class AdventuresController < ApplicationController
   # POST /adventures.json
   def create
     @adventure = Adventure.new(adventure_params)
-    @adventure.create_address(adventure_params[:address_name])
+    @adventure.build_address(adventure_params[:address_name])
     respond_to do |format|
       if @adventure.save
         format.html { redirect_to @adventure, notice: 'Adventure was successfully created.' }
@@ -60,10 +64,6 @@ class AdventuresController < ApplicationController
       format.html { redirect_to adventures_url }
       format.json { head :no_content }
     end
-  end
-
-  def address
-    @addresses = Address.all
   end
 
   private
