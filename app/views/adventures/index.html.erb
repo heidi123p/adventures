@@ -29,9 +29,9 @@
       	<td><%= image_tag adventure.picture_url(:thumb) if adventure.picture? %></td>
       	<td><%= adventure.name %></td>
 		    <td><%= adventure.country %></td>
-        <%= adventure.address do |address| %>
-    	  <td><%= adventure.address.address_name if adventure.address? %>      
-        <%end%>
+    	  <td><%= adventure.address do |address| %>
+          <%= address.address_name %> 
+        <% end %>
         </td>
         <td><%= adventure.description %></td>    
 <!--        <td><%= adventure.budget %></td> -->
