@@ -27,7 +27,11 @@ class AdventuresController < ApplicationController
     @adventure = Adventure.new(adventure_params)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     @address= Address.new(adventure_params[:addresses_attributes])
+=======
+
+>>>>>>> parent of 314cfd5... added backend support for addresses I think
 =======
 
 >>>>>>> parent of 314cfd5... added backend support for addresses I think
@@ -79,7 +83,11 @@ class AdventuresController < ApplicationController
     def adventure_params
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       params.require(:adventure).permit(:name, :country, :description, :picture, :budget, :link, :more_info, :length, :completed, :submitted_by, :addresses_attributes => [:address_name, :latitude, :longitude, :adventure_id, :_destroy])
+=======
+      params.require(:adventure).permit(:name, :country, :description, :picture, :budget, :link, :more_info, :completed, :submitted_by)
+>>>>>>> parent of 314cfd5... added backend support for addresses I think
 =======
       params.require(:adventure).permit(:name, :country, :description, :picture, :budget, :link, :more_info, :completed, :submitted_by)
 >>>>>>> parent of 314cfd5... added backend support for addresses I think
