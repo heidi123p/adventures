@@ -1,4 +1,5 @@
 Adventures::Application.routes.draw do
+<<<<<<< HEAD
   get "static_pages/help"
   resources :addresses do
     member do
@@ -6,6 +7,8 @@ Adventures::Application.routes.draw do
     end
   end
 
+=======
+>>>>>>> parent of 314cfd5... added backend support for addresses I think
   get "pages/info"
   resources :adventures
   root :to =>redirect('/adventures')

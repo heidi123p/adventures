@@ -5,7 +5,6 @@ class AdventuresController < ApplicationController
   # GET /adventures.json
   def index
     @adventures = Adventure.all
-    @address = Address.all
   end
 
   # GET /adventures/1
@@ -26,7 +25,11 @@ class AdventuresController < ApplicationController
   # POST /adventures.json
   def create
     @adventure = Adventure.new(adventure_params)
+<<<<<<< HEAD
     @address= Address.new(adventure_params[:addresses_attributes])
+=======
+
+>>>>>>> parent of 314cfd5... added backend support for addresses I think
     respond_to do |format|
       if @adventure.save
         format.html { redirect_to @adventure, notice: 'Adventure was successfully created.' }
@@ -70,6 +73,10 @@ class AdventuresController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def adventure_params
+<<<<<<< HEAD
       params.require(:adventure).permit(:name, :country, :description, :picture, :budget, :link, :more_info, :length, :completed, :submitted_by, :addresses_attributes => [:address_name, :latitude, :longitude, :adventure_id, :_destroy])
+=======
+      params.require(:adventure).permit(:name, :country, :description, :picture, :budget, :link, :more_info, :completed, :submitted_by)
+>>>>>>> parent of 314cfd5... added backend support for addresses I think
     end
 end
