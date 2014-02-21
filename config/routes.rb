@@ -1,6 +1,7 @@
 Adventures::Application.routes.draw do
-  get "pages/info"
+  resources :locations
   resources :adventures
+  get "pages/info"
   root :to =>redirect('/adventures')
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
