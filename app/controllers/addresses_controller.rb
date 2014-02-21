@@ -27,7 +27,7 @@ class AddressesController < ApplicationController
   # POST /addresses.json
   def create
     @adventure = Adventure.find(params[:adventure_id])
-    @address = @adventure.addresses.build(params[:address])
+    @address = @adventure.addresses.build(address_params)
 
     respond_to do |format|
       if @address.save

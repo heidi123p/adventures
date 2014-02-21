@@ -26,7 +26,7 @@ class AdventuresController < ApplicationController
   # POST /adventures.json
   def create
     @adventure = Adventure.new(adventure_params)
-    @adventure.create_address(adventure_params[:address_name])
+    @address= Address.new(adventure_params[:addresses_attributes])
     respond_to do |format|
       if @adventure.save
         format.html { redirect_to @adventure, notice: 'Adventure was successfully created.' }
@@ -60,10 +60,6 @@ class AdventuresController < ApplicationController
       format.html { redirect_to adventures_url }
       format.json { head :no_content }
     end
-  end
-
-  def address
-    @addresses = Address.all
   end
 
   private
