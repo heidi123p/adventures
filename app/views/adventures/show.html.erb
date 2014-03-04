@@ -18,16 +18,13 @@
   <%= @adventure.description %>
 </p>
 
-
+<p><strong>Duration:</strong>
+  <%= @adventure.time %>
+</p>
 
 <p>
   <strong>Budget:</strong>
   <%= @adventure.budget %>
-</p>
-
-<p>
-  <strong>Link:</strong>
-  <%= link_to @adventure.link %>
 </p>
 
 <p>
@@ -36,13 +33,24 @@
 </p>
 
 <p>
-  <strong>Completed:</strong>
-  <%= @adventure.completed %>
+  <strong>Link:</strong>
+  <%= link_to @adventure.link %>
 </p>
+
 <p>
   <strong>Submitted by:</strong>
   <%= @adventure.submitted_by %>
 </p>
+
+<p>
+  <strong>Completed:</strong>
+  <% if @adventure.completed? %>
+    <%= check_box_tag('completed', @adventure.completed, false, :disabled => true) %>
+  <% else %>
+    Not Yet
+  <% end %>
+</p>
+
 <%= link_to 'Add Location', new_location_path %> |
 <%= link_to 'Edit Adventure', edit_adventure_path(@adventure) %> |
 <%= link_to 'Back', adventures_path %>
