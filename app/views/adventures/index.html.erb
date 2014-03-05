@@ -35,7 +35,7 @@
 <!--    <td><%= adventure.more_info %></td>
         <td><%= adventure.completed %></td> -->
         <td><%= adventure.submitted_by %></td>
-        <td><%= link_to 'View', adventure %></td>
+        <td><%= link_to 'View', adventure, class: "btn btn-small" %></td>
         <td><%= link_to 'Add Location', new_location_path %></td>
         <td><%= link_to 'Edit', edit_adventure_path(adventure) %></td>
         <td><%= link_to 'Delete', adventure, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -46,4 +46,4 @@
 
 <br>
 
-<%= link_to 'New Adventure', new_adventure_path %>
+<%= link_to 'New Adventure', new_adventure_path, class: "btn btn-large btn-primary" %> 

@@ -8,9 +8,7 @@
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
     <%= favicon_link_tag 'favicon.ico' %>
-    <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    <%= render 'layouts/shim' %>
   </head>
   <body>
     <header>
@@ -21,5 +19,6 @@
        <%= yield %>
        <%= link_to "Sign up now!", '#', class: "btn btn-large btn-primary" %>
     </main>
+    <%= render 'layouts/footer' %>
   </body>
 </html>
