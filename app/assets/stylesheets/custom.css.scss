@@ -1,4 +1,25 @@
 @import "bootstrap";
+/* mixins, variables, etc */
+
+$prettyGreen:#39E681;
+
+/* universal */
+
+html {
+  overflow-y: scroll;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center h1 {
+  margin-bottom: 10px;
+}
 
 /* footer */
 
@@ -9,7 +30,7 @@ footer {
 }
 
 footer a {
-  color: #39E681;
+  color: $prettyGreen;
 }
 
 footer a:hover {
@@ -18,4 +39,20 @@ footer a:hover {
 
 footer small {
   float: left;
+}
+
+/* header */
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: #fff;
+  padding-top: 9px;
+  line-height: 1;
+}
+
+#logo:hover {
+  color: #fff;
+  text-decoration: none;
 }

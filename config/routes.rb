@@ -1,8 +1,13 @@
 Adventures::Application.routes.draw do
+  get "users/new"
   resources :locations
   resources :adventures
   get "pages/info"
   root :to =>redirect('/adventures')
+  match '/signup',    to: 'users#new',          via: 'get'
+  match '/help',      to: 'static_pages#help',  via: 'get'
+  match '/info',      to: 'pages#info',         via: 'get'
+  match '/locations', to: 'locations#index',    via: 'get'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
