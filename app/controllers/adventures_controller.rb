@@ -10,6 +10,7 @@ class AdventuresController < ApplicationController
   # GET /adventures/1
   # GET /adventures/1.json
   def show
+    @json = Adventure.find(params[:id]).address.to_gmaps4rails
   end
 
   # GET /adventures/new
