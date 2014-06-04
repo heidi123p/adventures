@@ -88,3 +88,6 @@ gem 'country_select'
 #for adding address
 gem 'geokit'
 gem 'geokit-rails'
+
+#for displaying google maps
+gem 'gmaps4rails', '~> 2.1.2'

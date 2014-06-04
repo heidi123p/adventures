@@ -72,6 +72,7 @@ GEM
     geokit-rails (2.0.1)
       geokit (~> 1.5)
       rails (>= 3.0)
+    gmaps4rails (2.1.2)
     growl (1.0.3)
     guard (2.6.0)
       formatador (>= 0.2.4)
@@ -223,6 +224,7 @@ DEPENDENCIES
   country_select
   geokit
   geokit-rails
+  gmaps4rails (~> 2.1.2)
   growl (= 1.0.3)
   guard-rspec
   jbuilder (~> 1.2)
