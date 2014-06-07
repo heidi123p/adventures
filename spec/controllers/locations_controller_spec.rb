@@ -23,7 +23,7 @@ describe LocationsController do
   # This should return the minimal set of attributes required to create a valid
   # Location. As you add validations to Location, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) { { "address" => "65 Vicksburg St, San Francisco, CA 94117" } }
+  let(:valid_attributes) { { "address" => "65 Vicksburg St, San Francisco, CA 94117", adventure_id:"4" } }
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
