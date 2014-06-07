@@ -90,6 +90,9 @@ gem 'country_select'
 gem 'geokit'
 gem 'geokit-rails'
 
+#for detecting latitude & longitude from address
+gem 'geocoder'
+
 #for displaying google maps
 gem 'gmaps4rails', '~> 2.1.2'
 gem 'underscore-rails'
