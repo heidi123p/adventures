@@ -23,7 +23,7 @@ describe LocationsController do
   # This should return the minimal set of attributes required to create a valid
   # Location. As you add validations to Location, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) { { "address" => "MyString" } }
+  let(:valid_attributes) { { "address" => "65 Vicksburg St, San Francisco, CA 94117" } }
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
@@ -85,14 +85,14 @@ describe LocationsController do
       it "assigns a newly created but unsaved location as @location" do
         # Trigger the behavior that occurs when invalid params are submitted
         Location.any_instance.stub(:save).and_return(false)
-        post :create, {:location => { "address" => "invalid value" }}, valid_session
+        post :create, {:location => { "address" => "" }}, valid_session
         assigns(:location).should be_a_new(Location)
       end
 
       it "re-renders the 'new' template" do
         # Trigger the behavior that occurs when invalid params are submitted
         Location.any_instance.stub(:save).and_return(false)
-        post :create, {:location => { "address" => "invalid value" }}, valid_session
+        post :create, {:location => { "address" => "" }}, valid_session
         response.should render_template("new")
       end
     end
