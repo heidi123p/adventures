@@ -6,4 +6,11 @@ describe Location do
   subject { @location }
 
   it { should respond_to(:address) }
+
+  it { should be_valid }
+
+  describe "when address not present" do
+  	before {@location.address = " " }
+  	it { should_not be_valid }
+  end
 end
