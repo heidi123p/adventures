@@ -13,4 +13,9 @@ describe Location do
   	before {@location.address = " " }
   	it { should_not be_valid }
   end
+
+  describe "when adventure id not present" do
+  	before { @location.adventure_id = " " }
+  	it { should_not be_valid}
+  end
 end
