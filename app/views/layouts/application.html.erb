@@ -6,16 +6,24 @@
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Adventures" %>">
     <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "gmaps.js", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
     <%= favicon_link_tag 'favicon.ico' %>
     <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCP5NViYBg_el5x_7G8GaKgkxihZig_wvo"></script>
     <script type="text/javascript">
       function initialize() {
+        var myLatLng = new google.maps.LatLng(13.3670968,103.8448134);
         var mapOptions = {
-          center: new google.maps.LatLng(12.0479159,102.3234816),
+          center: myLatLng,
           zoom: 8
         };
         var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+
+        var marker = new google.maps.Marker({
+          position: myLatLng,
+          map: map,
+          title: "myLatLngMarker"
+        });
       }  
       google.maps.event.addDomListener(window, 'load', initialize);
     </script>
