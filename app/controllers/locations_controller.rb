@@ -10,7 +10,11 @@ class LocationsController < ApplicationController
   # GET /locations/1
   # GET /locations/1.json
   def show
-    @json = Location.find(params[:id]).address.to_gmaps4rails
+    @locations = Location.all
+    @hash = Gmaps4rails.build_markers(@locations) do |location,marker|
+      marker.lat location.latitude
+      marker.lng location.longitude
+    end
   end
 
   # GET /locations/new
@@ -70,6 +74,6 @@ class LocationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def location_params
-      params.require(:location).permit(:address, :adventure_id)
+      params.require(:location).permit(:address, :adventure_id, :latitude, :longitude)
     end
 end

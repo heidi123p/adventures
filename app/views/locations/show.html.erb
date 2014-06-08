@@ -11,8 +11,12 @@
 </p>
 
 <div style='width:800px;'>
-	<div id="map" style='width:800px; height:400px;'></div>
-	<%= gmaps4rails(@json) %>
+	<p>
+		<strong>Map:</strong>
+	</p>
+	<div id="map-canvas" style='width:800px; height:400px;'>
+	markers = handler.addMarkers(<%=raw @hash.to_json %>);
+	</div>
 </div>
 <%= link_to 'Edit', edit_location_path(@location) %> |
 <%= link_to 'Back', locations_path %>
