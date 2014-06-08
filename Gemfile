@@ -19,9 +19,10 @@ group :development, :test do
   # gem 'rb-notifu', '0.0.4'
   # gem 'win32console', '1.3.2'
   # gem 'wdm', '0.1.0'
-  # gem 'spork-rails'
-  # gem 'guard-spork'
-  # gem 'childprocess'
+ 
+  gem 'spork-rails'
+  gem 'guard-spork'
+  gem 'childprocess'
 end
 
 group :test do
@@ -88,3 +89,10 @@ gem 'country_select'
 #for adding address
 gem 'geokit'
 gem 'geokit-rails'
+
+#for detecting latitude & longitude from address
+gem 'geocoder'
+
+#for displaying google maps
+gem 'gmaps4rails', '~> 2.1.2'
+gem 'underscore-rails'

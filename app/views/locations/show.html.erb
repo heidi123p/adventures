@@ -10,5 +10,37 @@
   <%= @location.adventure_id %>
 </p>
 
+<div style='width:800px;'>
+	<p>
+		<strong>Map:</strong>
+	</p>  
+
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCP5NViYBg_el5x_7G8GaKgkxihZig_wvo"></script>
+<script type="text/javascript">
+    function initialize() {
+		var myLatLng = new google.maps.LatLng( <%=@location.latitude%>,<%=@location.longitude%>);
+        var mapOptions = {
+        	center: myLatLng,
+          	zoom: 12
+    };
+    var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+
+    var marker = new google.maps.Marker({
+        position: myLatLng,
+        map: map,
+        title: "myLatLngMarker"
+        });
+      }  
+    google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+
+	<div id="map-canvas" style='width:800px; height:400px;'>
+	</div>
+	<p>
+		<strong>Coords:</strong>
+		Lat:<%= @location.latitude %>
+		Long: <%= @location.longitude %>
+	</p>
+</div>
 <%= link_to 'Edit', edit_location_path(@location) %> |
 <%= link_to 'Back', locations_path %>
