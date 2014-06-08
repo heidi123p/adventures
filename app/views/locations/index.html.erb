@@ -1,4 +1,7 @@
-<h1>Listing locations</h1>
+<h1>Showing locations</h1>
+
+<div id="map-canvas" style='width:800px; height:400px;'>
+  </div>
 
 <table>
   <thead>
@@ -10,7 +13,6 @@
       <th></th>
     </tr>
   </thead>
-
   <tbody>
     <% @locations.each do |location| %>
       <tr>
@@ -24,8 +26,7 @@
   </tbody>
 </table>
 
-  <div id="map-canvas" style='width:800px; height:400px;'>
-  </div>
 <br>
-
+markers = handler.addMarkers(<%=raw @hash.to_json %>);
+<br>
 <%= link_to 'New Location', new_location_path %>
