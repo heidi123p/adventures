@@ -15,8 +15,12 @@
 		<strong>Map:</strong>
 	</p>
 	<div id="map-canvas" style='width:800px; height:400px;'>
-	markers = handler.addMarkers(<%=raw @hash.to_json %>);
 	</div>
+	<p>
+		<strong>Coords:</strong>
+		Lat:<%= @location.latitude %>
+		Long: <%= @location.longitude %>
+	</p>
 </div>
 <%= link_to 'Edit', edit_location_path(@location) %> |
 <%= link_to 'Back', locations_path %>
