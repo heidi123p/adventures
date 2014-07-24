@@ -1,7 +1,20 @@
 <h1>Showing locations</h1>
-
 <div id="map-canvas" style='width:800px; height:400px;'>
   </div>
+<script type="text/javascript">
+  function initialize() {
+  var angkorWat = new google.maps.LatLng("13.4125", "103.8667");
+    var mapOptions = {
+      center: angkorWat,
+      zoom: 2
+    };
+    var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+  }
+
+ google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+
+<div id="map-canvas" style='width:800px; height:400px;'></div>
 
 <table>
   <thead>
@@ -22,11 +35,20 @@
         <td><%= link_to 'Edit', edit_location_path(location) %></td>
         <td><%= link_to 'Destroy', location, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
+      <script type="text/javascript">
+        function setMarker() {
+          var myLatLng = new google.maps.LatLng("<%= location.latitude %>", "<%= location.longitude %>");
+          var marker = new google.maps.Marker({
+          position: myLatLng,
+          map: map,
+          title:"Test"
+          });
+        google.maps.event.addDomListener(window,'load', setMarker);
+      </script>
     <% end %>
   </tbody>
 </table>
 
 <br>
-markers = handler.addMarkers(<%=raw @hash.to_json %>);
 <br>
 <%= link_to 'New Location', new_location_path %>
