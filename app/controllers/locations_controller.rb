@@ -5,6 +5,11 @@ class LocationsController < ApplicationController
   # GET /locations.json
   def index
     @locations = Location.all
+    respond_to do |format|
+      format.html # index.hrml.erb
+      format.xml { render xml: @locations}
+      format.json { render json: @locations}
+    end
   end
 
   # GET /locations/1
