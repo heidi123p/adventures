@@ -56,3 +56,8 @@ footer small {
   color: #fff;
   text-decoration: none;
 }
+
+/* bootstrap navbar-brand is overriding this right now */
+.navbar-right {
+  float: right;
+}
