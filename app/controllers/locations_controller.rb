@@ -5,6 +5,8 @@ class LocationsController < ApplicationController
   # GET /locations.json
   def index
     @locations = Location.all
+    #create geokit location for session to display closest locations on map?
+    #hmm maybe I want this to be a trait of the user instead of here in the index?
     respond_to do |format|
       format.html # index.hrml.erb
       format.xml { render xml: @locations}

@@ -1,6 +1,8 @@
-<h1>Showing locations</h1>
+<h1>Showing locations near me</h1>
 <div id="map-canvas" style='width:800px; height:400px;'>
   </div>
+<!--this map actually shows up, but is generically stuck on Angkor Wat
+I want this to show the adventure closest to the user, or perhaps the adventures within x miles of the user -->
 <script type="text/javascript">
   function initialize() {
   var angkorWat = new google.maps.LatLng("13.4125", "103.8667");
@@ -9,10 +11,15 @@
       zoom: 4
     };
     var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+    var marker = new google.maps.Marker({
+      position: angkorWat,
+      map: map,
+      title:"Angkor Wat placeholder!"
+    });
   }
 
  google.maps.event.addDomListener(window, 'load', initialize);
-</script>
+</script> 
 
 <div id="map-canvas" style='width:800px; height:400px;'></div>
 
@@ -26,6 +33,7 @@
       <th></th>
     </tr>
   </thead>
+
   <tbody>
     <% @locations.each do |location| %>
       <tr>
@@ -35,6 +43,8 @@
         <td><%= link_to 'Edit', edit_location_path(location) %></td>
         <td><%= link_to 'Destroy', location, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
+<!-- don't show all the places on a map, just the place thats closest to you on the above map 
+  something like this might be nice for adding markers for more adventures in the future
       <script type="text/javascript">
         function setMarker() {
           var myLatLng = new google.maps.LatLng("<%= location.latitude %>", "<%= location.longitude %>");
@@ -45,6 +55,7 @@
           });
         google.maps.event.addDomListener(window,'load', setMarker);
       </script>
+-->
     <% end %>
   </tbody>
 </table>
