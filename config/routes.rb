@@ -2,6 +2,7 @@ Adventures::Application.routes.draw do
   get "users/new"
   resources :locations
   resources :adventures
+  resources :users
   get "pages/info"
   root :to =>redirect('/adventures')
   match '/signup',    to: 'users#new',          via: 'get'
