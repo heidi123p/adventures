@@ -1,9 +1,2 @@
 #test fixtures for user
 
-one:
-	name:MyString
-	email: MyString@test.com
-
-two:
-	name:Testing
-	email:Tests@thesquirrelfish.com
