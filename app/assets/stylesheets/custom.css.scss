@@ -21,6 +21,10 @@ textarea {
   margin-bottom: 10px;
 }
 
+.btn-primary {
+  margin: center;
+}
+
 /* footer */
 
 footer {
@@ -55,4 +59,13 @@ footer small {
 #logo:hover {
   color: #fff;
   text-decoration: none;
+}
+
+/* bootstrap navbar-brand is overriding this right now */
+.navbar-right {
+  float: right !important;
+}
+
+.highlight-nav {
+  color: #40E0CD !important;
 }

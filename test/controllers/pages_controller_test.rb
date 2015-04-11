@@ -9,7 +9,7 @@ class PagesControllerTest < ActionController::TestCase
   test "title" do
   	get :info
   	assert_response :success
-  	assert_select "title", "Get Adventurous |  Info"
+  	assert_select "title", "Do Something |  Info"
   end
 
   test "footer contains text references to thesquirrelfish" do
